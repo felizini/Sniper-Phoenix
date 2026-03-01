@@ -360,7 +360,7 @@ def carregar_configuracoes():
     mudanca_symbol = False
 
     if os.path.exists("config.ini"):
-        cp = configparser.ConfigParser()
+        cp = configparser.ConfigParser(inline_comment_prefixes=("#", ";"))
         cp.read("config.ini")
         try:
             CONFIG["API_KEY"] = cp["binance"]["api_key"]
